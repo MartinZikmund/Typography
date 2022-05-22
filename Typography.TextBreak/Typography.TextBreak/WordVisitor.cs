@@ -71,7 +71,7 @@ namespace Typography.TextBreak
         }
 
 
-        public VisitorState State { get; internal set; }
+        public VisitorState State { get; set; }
         //
         public int CurrentIndex => _currentIndex;
         //
@@ -89,7 +89,7 @@ namespace Typography.TextBreak
 #if DEBUG
         //int dbugAddSteps;
 #endif
-        internal void AddWordBreakAt(int index, WordKind wordKind)
+        public void AddWordBreakAt(int index, WordKind wordKind)
         {
 
 #if DEBUG
@@ -126,7 +126,7 @@ namespace Typography.TextBreak
         public WordKind LatestWordKind { get; private set; }
         public ushort LatestSpanLen { get; private set; }
         //
-        internal void SetCurrentIndex(int index)
+        public void SetCurrentIndex(int index)
         {
             if (_buffer == null) throw new InvalidOperationException(nameof(LoadText) + " not called");
             _currentIndex = index;

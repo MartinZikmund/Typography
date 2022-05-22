@@ -29,7 +29,7 @@ namespace Typography.TextBreak
         {
 
         }
-        internal override void BreakWord(WordVisitor visitor, char[] charBuff, int startAt, int len)
+        public override void BreakWord(WordVisitor visitor, char[] charBuff, int startAt, int len)
         {
             visitor.State = VisitorState.Parsing;
             DoBreak(visitor, charBuff, startAt, len, bb =>

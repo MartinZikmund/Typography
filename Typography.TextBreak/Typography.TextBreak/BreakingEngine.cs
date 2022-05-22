@@ -10,7 +10,7 @@ namespace Typography.TextBreak
 {
     public abstract class BreakingEngine
     {
-        internal abstract void BreakWord(WordVisitor visitor, char[] charBuff, int startAt, int len);
+        public abstract void BreakWord(WordVisitor visitor, char[] charBuff, int startAt, int len);
         public abstract bool CanBeStartChar(char c);
         public abstract bool CanHandle(char c);
     }
@@ -29,7 +29,7 @@ namespace Typography.TextBreak
 
 
         public bool DontMergeLastIncompleteWord { get; set; }
-        internal override void BreakWord(WordVisitor visitor, char[] charBuff, int startAt, int len)
+        public override void BreakWord(WordVisitor visitor, char[] charBuff, int startAt, int len)
         {
             visitor.State = VisitorState.Parsing;
             char c_first = this.FirstUnicodeChar;
